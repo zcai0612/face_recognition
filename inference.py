@@ -32,14 +32,10 @@ if __name__ == '__main__':
     feature, norm = model(torch.randn(2,3,112,112))
 
     test_image_path = 'images'
-
-    # aligned_rgb_img, num_faces = align.get_aligned_face('images/2people.jpg')
-    # print(num_faces)
-
     features = []
     for fname in sorted(os.listdir(test_image_path)):
         path = os.path.join(test_image_path, fname)
-        aligned_rgb_img, num_faces = align.get_aligned_face(path)
+        aligned_rgb_img = align.get_aligned_face(path)
         bgr_tensor_input = to_input(aligned_rgb_img)
         s_t = time.time()
         feature, _ = model(bgr_tensor_input)
