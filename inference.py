@@ -7,7 +7,7 @@ import time
 
 
 adaface_models = {
-    'ir_101':"model/adaface/adaface_ir101_webface12m.ckpt",
+    'ir_101':"models/adaface/adaface_ir101_webface12m.ckpt",
 }
 
 def load_pretrained_model(architecture='ir_50'):
